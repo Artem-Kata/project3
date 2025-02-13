@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/authorization/audits")
+@RequestMapping("/api/authorization/audit")
 public class AuditController {
 
     private final AuditService auditService;
@@ -22,8 +22,8 @@ public class AuditController {
         return auditService.createAudit(auditDTO);
     }
 
-    @PatchMapping("/{id}")
+    /*@PatchMapping("/{id}")
     public AuditDTO updateAudit(@PathVariable Long id, @RequestBody AuditDTO auditDTO) {
         return auditService.updateAudit(id, auditDTO);
-    }
+    }*/
 }

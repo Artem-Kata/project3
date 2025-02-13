@@ -5,20 +5,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @ToString
-public class UserDTO {
+public class LoginRequestDTO {
 
-    private Long id;
-
-    @NotBlank(message = "Role is required")
-    private String role;
-
-    @NotNull(message = "ProfileId is required")
-    private Long profileId;
+    @NotBlank(message = "Profile ID is required")
+    private String profileId;
 
     @NotBlank(message = "Password is required")
     private String password;

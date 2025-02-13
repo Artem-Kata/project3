@@ -1,50 +1,47 @@
 package com.bank.authorization.Controllers;
 
 import com.bank.authorization.DTO.UserDTO;
-import com.bank.authorization.Services.UserService;
+import com.bank.authorization.Entities.User;
+import com.bank.authorization.Mapper.EntityMapper;
+import com.bank.authorization.Repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/authorization/users")
 public class UserController {
 
-    private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private UserRepository userRepository;
 
-    @GetMapping
-    public List<UserDTO> getAllUsers() {
-        return userService.getAllUsers();
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/{id}")
-    public UserDTO getUserById(@PathVariable Long id) {
-        log.info("Getting user with id: {}", id);
-        return userService.getUserById(id);
-    }
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody UserDTO userDTO) {
+        // Проверяем, не существует ли пользователь с таким profileId
+        Optional<User> existingUser = userRepository.findByProfileId(userDTO.getProfileId());
+        if (existingUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("User with profileId " + userDTO.getProfileId() + " already exists.");
+        }
 
-    @PostMapping
-    public UserDTO createUser(@Valid @RequestBody UserDTO userDTO) {
-        log.info("Creating user with profileId: {}", userDTO.getProfileId());
-        return userService.createUser(userDTO);
-    }
-
-    @PatchMapping("/{id}")
-    public UserDTO updateUser(@PathVariable Long id, @Valid @RequestBody UserDTO userDTO) {
-        log.info("Updating user with id: {}", id);
-        return userService.updateUser(id, userDTO);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        log.info("Deleting user with id: {}", id);
-        userService.deleteUser(id);
+        // Преобразуем DTO в сущность
+        User user = EntityMapper.toUser(userDTO);
+        // Шифруем пароль перед сохранением
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        // Сохраняем пользователя
+        User savedUser = userRepository.save(user);
+        log.info("Registered new user with profileId: {}", savedUser.getProfileId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(EntityMapper.toUserDTO(savedUser));
     }
 }

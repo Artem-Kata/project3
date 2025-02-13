@@ -32,11 +32,9 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-jwt:
-  secret: myJwtSecretKey1234567890
-  expiration-ms: 86400000           # 24 часа
-
 logging:
   level:
     root: INFO
     com.bank.authorization: DEBUG
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE

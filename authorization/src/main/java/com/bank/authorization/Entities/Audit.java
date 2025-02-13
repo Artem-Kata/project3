@@ -37,10 +37,10 @@ public class Audit {
     @Column(name = "modified_at")
     private OffsetDateTime modifiedAt;
 
-    @Column(name = "new_entity_json")
+    @Column(name = "new_entity_json", columnDefinition = "TEXT")
     private String newEntityJson;
 
-    @Column(name = "entity_json", nullable = false)
+    @Column(name = "entity_json", nullable = false, columnDefinition = "TEXT")
     private String entityJson;
 
 }

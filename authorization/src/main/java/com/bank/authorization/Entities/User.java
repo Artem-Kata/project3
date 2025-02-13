@@ -1,15 +1,14 @@
 package com.bank.authorization.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table (name = "user", schema = "authorization", uniqueConstraints = @UniqueConstraint (columnNames = "password", name = "user_password_key"))
-@Data
+@Table (name = "\"user\"", schema = "\"authorization\"")
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
