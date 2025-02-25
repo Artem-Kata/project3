@@ -21,33 +21,44 @@ import java.io.IOException;
 @Component
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JWTTokenProvider tokenProvider;
+    private final JWTTokenProvider tokenProvider;
+    private final CustomUserDetailsService customUserDetailsService;
 
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    public JWTAuthenticationFilter(JWTTokenProvider tokenProvider, CustomUserDetailsService customUserDetailsService) {
+        this.tokenProvider = tokenProvider;
+        this.customUserDetailsService = customUserDetailsService;
+    }
 
     @Override
-    protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(@NonNull HttpServletRequest request,
+                                    @NonNull HttpServletResponse response,
+                                    @NonNull FilterChain filterChain) throws ServletException, IOException {
         try {
-            String jwt = parseJwt(request);
+            final String jwt = parseJwt(request);
             if (jwt != null && tokenProvider.validateToken(jwt)) {
-                String username = tokenProvider.getUsernameFromJWT(jwt);
+                final String username = tokenProvider.getUsernameFromJWT(jwt);
 
-                UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                log.info("Extracted username (profileId) from JWT: {}", username);
+
+                final UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+                final UsernamePasswordAuthenticationToken authenticationToken =
+                        new UsernamePasswordAuthenticationToken(userDetails,
+                                null,
+                                userDetails.getAuthorities());
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                log.info("Authentication set for user: {}", username);
             }
-        }catch (Exception e) {
-            System.err.println(e);
+        } catch (Exception e) {
+            log.error("Authentication error: {}", e.getMessage());
         }
         filterChain.doFilter(request, response);
     }
 
     private String parseJwt(HttpServletRequest request) {
-        String headerAuth = request.getHeader("Authorization");
+        final String headerAuth = request.getHeader("Authorization");
 
         if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
             return headerAuth.substring(7);

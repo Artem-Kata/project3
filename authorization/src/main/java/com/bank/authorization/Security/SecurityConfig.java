@@ -1,11 +1,10 @@
 package com.bank.authorization.Security;
 
-import com.bank.authorization.Entities.User;
-import com.bank.authorization.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -15,20 +14,14 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    @Autowired
-    private JWTAuthenticationFilter jwtAuthenticationFilter;
+    private final JWTAuthenticationFilter jwtAuthenticationFilter;
 
-    @Bean
-    public User saveUser (UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        User user = new User();
-        Long testProfileId = 123L;
-        user.setRole("ROLE_USER");
-        user.setProfileId(testProfileId);
-        user.setPassword(passwordEncoder.encode("mysecretpassword"));
-        System.out.println("Test user added with profileId: " + user.getProfileId() + user.getPassword() + user.getRole());
-        return userRepository.save(user);
+    @Autowired
+    public SecurityConfig(JWTAuthenticationFilter jwtAuthenticationFilter) {
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
     @Bean
@@ -38,7 +31,9 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/authorization/auth/**", "/api/authorization/users/register").permitAll()
+                .antMatchers("/auth/**", "/users/register").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

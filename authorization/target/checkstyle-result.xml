@@ -1,101 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\AuthorizationApplication.java">
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Aspect\AuditAspect.java">
+<error line="44" column="17" severity="error" message="The String &quot;CREATE&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
+<error line="46" column="24" severity="error" message="The String &quot;UPDATE&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
+<error line="100" column="24" severity="error" message="Assignment of parameter &apos;result&apos; is not allowed." source="com.puppycrawl.tools.checkstyle.checks.coding.ParameterAssignmentCheck"/>
+<error line="118" column="29" severity="error" message="The String &quot;{}&quot; appears 3 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Controllers\AuditController.java">
-<error line="6" column="47" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
-<error line="8" column="8" severity="error" message="Unused import - java.util.List." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Config\SwaggerConfig.java">
+<error line="16" column="68" severity="error" message="The String &quot;bearerAuth&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Controllers\AuthController.java">
-<error line="37" column="28" severity="error" message="Variable &apos;authentication&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="44" column="20" severity="error" message="Variable &apos;jwt&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="45" column="33" severity="error" message="Variable &apos;response&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="50" column="33" severity="error" message="Variable &apos;errorResponse&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\DTO\AuditDTO.java">
+<error line="16" column="17" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="20" column="17" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="24" column="17" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="27" column="17" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Controllers\UserController.java">
-<error line="6" column="47" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\DTO\UserDTO.java">
+<error line="21" column="55" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="30" column="55" severity="error" message="&apos;500&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\DTO\AuditDTO.java">
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Entities\Audit.java">
+<error line="26" column="62" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="29" column="65" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="32" column="61" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="35" column="44" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\DTO\UserDTO.java">
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Entities\User.java">
+<error line="30" column="40" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="36" column="59" severity="error" message="&apos;500&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Entities\Audit.java">
-<error line="7" column="25" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.persistence.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
-<error line="22" column="63" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="25" column="66" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="28" column="62" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="31" column="45" severity="error" message="&apos;255&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Handler\GlobalExceptionHandler.java">
+<error line="23" column="20" severity="error" message="The String &quot;error&quot; appears 5 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
+<error line="53" column="28" severity="error" message="The String &quot;Database error: &quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Entities\User.java">
-<error line="7" column="25" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - javax.persistence.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
-<error line="11" severity="error" message="Line is longer than 120 characters (found 142)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="22" column="41" severity="error" message="&apos;40&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="28" column="60" severity="error" message="&apos;500&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Security\CustomUserDetailsService.java">
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Exceptions\ResourceNotFoundException.java">
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Security\JWTAuthenticationFilter.java">
+<error line="64" column="41" severity="error" message="&apos;7&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Handler\GlobalExceptionHandler.java">
-<error line="17" column="29" severity="error" message="Variable &apos;errorDetails&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="18" column="26" severity="error" message="The String &quot;timestamp&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="19" column="26" severity="error" message="The String &quot;status&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="20" column="26" severity="error" message="The String &quot;error&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="21" column="26" severity="error" message="The String &quot;message&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="27" column="29" severity="error" message="Variable &apos;errorDetails&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Mapper\AuditMapper.java">
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Mapper\UserMapper.java">
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Repositories\AuditRepository.java">
-<error line="6" column="56" severity="error" message="&apos;&lt;&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Repositories\UserRepository.java">
-<error line="7" column="55" severity="error" message="&apos;&lt;&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Security\CustomUserDetailsService.java">
-<error line="21" column="14" severity="error" message="Variable &apos;profileId&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="27" column="14" severity="error" message="Variable &apos;user&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Security\JWTAuthenticationFilter.java">
-<error line="29" severity="error" message="Line is longer than 120 characters (found 157)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="30" column="16" severity="error" message="Variable &apos;token&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="32" column="20" severity="error" message="Variable &apos;username&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="34" column="25" severity="error" message="Variable &apos;userDetails&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="35" column="49" severity="error" message="Variable &apos;authentication&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="45" column="16" severity="error" message="Variable &apos;bearerToken&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="47" column="42" severity="error" message="&apos;7&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Security\JWTTokenProvider.java">
-<error line="5" column="23" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - io.jsonwebtoken.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
-<error line="18" column="14" severity="error" message="Variable &apos;now&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="19" column="14" severity="error" message="Variable &apos;expiryDate&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="30" column="16" severity="error" message="Variable &apos;claims&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Security\SecurityConfig.java">
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Services\AuditService.java">
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Services\AuditServiceImpl.java">
-<error line="27" column="15" severity="error" message="Variable &apos;audit&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="28" column="15" severity="error" message="Variable &apos;savedAudit&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="35" column="15" severity="error" message="Variable &apos;existingAudit&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="46" column="15" severity="error" message="Variable &apos;updatedAudit&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Services\UserService.java">
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\java\com\bank\authorization\Services\UserServiceImpl.java">
-<error line="31" column="14" severity="error" message="Variable &apos;user&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="32" column="14" severity="error" message="Variable &apos;savedUser&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="40" severity="error" message="Line is longer than 120 characters (found 136)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="40" column="14" severity="error" message="Variable &apos;oldUser&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="40" column="100" severity="error" message="The String &quot;User not found with id: \&quot; + id)&quot; appears 3 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="46" column="14" severity="error" message="Variable &apos;updatedUser&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="53" severity="error" message="Line is longer than 120 characters (found 134)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="53" column="14" severity="error" message="Variable &apos;user&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="69" severity="error" message="Line is longer than 120 characters (found 140)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="69" column="14" severity="error" message="Variable &apos;deleteUser&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-</file>
-<file name="C:\Users\bulyc\IdeaProjects\p_ss_bank_517\authorization\src\main\resources\application.properties">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<file name="C:\Users\bulyc\IdeaProjects\Project2\authorization\src\main\java\com\bank\authorization\Services\Impl\UserServiceImpl.java">
+<error line="43" column="45" severity="error" message="The String &quot;User not found with id: &quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
+<error line="71" column="45" severity="error" message="The String &quot;User not found with profileId: &quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 </file>
 </checkstyle>

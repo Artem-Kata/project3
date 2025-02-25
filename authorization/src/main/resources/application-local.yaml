@@ -27,14 +27,18 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
         show_sql: true
+jwt:
+  secret: my-512-bit-secret-32-characters-long-mySecretJWTToken-bank192837465-authorization
+  expiration-ms: 86400000           # 24 часа
 logging:
   level:
     root: INFO
     com.bank.authorization: DEBUG
+logging.level.org.springframework.security: DEBUG
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE

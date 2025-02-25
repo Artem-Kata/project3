@@ -9,9 +9,11 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface EntityMapper {
 
-    public static UserDTO toUserDTO(User user) {
-        if(user == null) return null;
-        UserDTO dto = new UserDTO();
+    static UserDTO toUserDTO(User user) {
+        if (user == null) {
+            return null;
+        }
+        final UserDTO dto = new UserDTO();
         dto.setId(user.getId());
         dto.setRole(user.getRole());
         dto.setProfileId(user.getProfileId());
@@ -19,9 +21,11 @@ public interface EntityMapper {
         return dto;
     }
 
-    public static User toUser(UserDTO dto) {
-        if(dto == null) return null;
-        User user = new User();
+    static User toUser(UserDTO dto) {
+        if (dto == null) {
+            return null;
+        }
+        final User user = new User();
         user.setId(dto.getId());
         user.setRole(dto.getRole());
         user.setProfileId(dto.getProfileId());
@@ -29,9 +33,11 @@ public interface EntityMapper {
         return user;
     }
 
-    public static AuditDTO toAuditDTO(Audit audit) {
-        if(audit == null) return null;
-        AuditDTO dto = new AuditDTO();
+    static AuditDTO toAuditDTO(Audit audit) {
+        if (audit == null) {
+            return null;
+        }
+        final AuditDTO dto = new AuditDTO();
         dto.setId(audit.getId());
         dto.setEntityType(audit.getEntityType());
         dto.setOperationType(audit.getOperationType());
@@ -44,9 +50,11 @@ public interface EntityMapper {
         return dto;
     }
 
-    public static Audit toAudit(AuditDTO dto) {
-        if(dto == null) return null;
-        Audit audit = new Audit();
+    static Audit toAudit(AuditDTO dto) {
+        if (dto == null) {
+            return null;
+        }
+        final Audit audit = new Audit();
         audit.setId(dto.getId());
         audit.setEntityType(dto.getEntityType());
         audit.setOperationType(dto.getOperationType());
